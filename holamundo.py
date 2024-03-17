@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,url_for,redirect
 
 app =  Flask(__name__)
 
@@ -15,6 +15,11 @@ def postId(post_id):
     return 'el id del post es:%s' % post_id
 @app.route('/form',methods=['POST'])
 def form():
+    print(url_for('getId',get_id=2))
     print(request.form)
     print(request.form['llave1'])
     return 'hola mundo'
+@app.route('/redirect',methods=['POST','GET'])
+def redirect1():
+    return redirect(url_for('getId',get_id=2))
+   
