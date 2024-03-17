@@ -33,3 +33,7 @@ def json():
         "username":"fale",
         "email":"fale@outlook.com"
     }
+
+@app.route('/home',methods=['GET'])
+def home():
+    return render_template('home.html',mensaje='Hola Mundo')
