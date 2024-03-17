@@ -27,3 +27,9 @@ def redirect1():
 @app.route('/render',methods=['POST','GET'])
 def render():
     return render_template('hola.html')
+@app.route('/json',methods=['POST','GET'])
+def json():
+    return{
+        "username":"fale",
+        "email":"fale@outlook.com"
+    }
